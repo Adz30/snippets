@@ -1,0 +1,92 @@
+{
+	"Describe Block": {
+		"prefix": "describe",
+		"body": [
+			"describe(\"$1\",  () =>  {",
+			"  it(\"$2\", async  () =>  {",
+			"    $3",
+			"  });",
+			"});"
+		],
+		"description": "Creates a describe block with a test"
+	},
+	"Before Each": {
+		"prefix": "beforeeach",
+		"body": [
+			"beforeEach(async function () {",
+			"  $1",
+			"});"
+		],
+		"description": "beforeEach block"
+	},
+	"Before All": {
+		"prefix": "beforeall",
+		"body": [
+			"before(async function () {",
+			"  $1",
+			"});"
+		],
+		"description": "before block (runs once before all tests)"
+	},
+	"Context Block": {
+		"prefix": "context",
+		"body": [
+			"context(\"$1\", function () {",
+			"  it(\"$2\", async function () {",
+			"    $3",
+			"  });",
+			"});"
+		],
+		"description": "Context block for grouping tests"
+	},
+	"Async Helper Function": {
+		"prefix": "asyncfn",
+		"body": [
+			"async function $1($2) {",
+			"  $3",
+			"}"
+		],
+		"description": "Reusable async function"
+	},
+	"Async Arrow Function": {
+		"prefix": "asyncarrow",
+		"body": [
+			"const $1 = async ($2) => {",
+			"  $3",
+			"};"
+		],
+		"description": "Async arrow function"
+	},
+	"it test template": {
+		"prefix": "itt",
+		"body": [
+			"it(\"$2\", async  () => {",
+			"  $3",
+			"});"
+		],
+		"description": "Blank it test template"
+	},
+	"Describe Block with BeforeEach": {
+		"prefix": "desbef",
+		"body": [
+			"describe(\"${1:ContractName}\", () => {",
+			"  let ${2:contractInstance};",
+			"  let deployer, user1, user2, user3;",
+			"",
+			"  beforeEach(async () => {",
+			"    const accounts = await ethers.getSigners();",
+			"    [deployer, user1, user2, user3] = accounts;",
+			"    $0",
+			"  });",
+			"});"
+		],
+		"description": "Describe block with contract and signers declaration and beforeEach to get signers"
+	},
+	"Use Selector": {
+		"prefix": "constuseselector",
+		"body": [
+			"const ${1:variableName} = useSelector((state) => state.${2:sliceName}.${3:key});"
+		],
+		"description": "Create a useSelector hook for Redux state slice"
+	}
+}

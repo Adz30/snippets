@@ -65,11 +65,11 @@ pragma solidity ^0.8.19;
 
 contract MyContract {
     address public owner;
-
-    constructor() {
+     constructor() {
         owner = msg.sender;
-    }
+    }      
 }
+
 Only Owner Modifier + Function (onlyowner + fonlyowner)
 
 solidity
